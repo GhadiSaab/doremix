@@ -36,11 +36,11 @@ pre_commit_check:
 
 test:
   stage: test
-  image: python:3.13
+  image: python:3.13-slim
   script:
+    - pip install uv
+    - uv pip install --system -r build/backend/requirements.txt -r src/back/tests/requirements-test.txt
     - cd src/back
-    - pip install -r $CI_PROJECT_DIR/build/backend/requirements.txt
-    - pip install -r tests/requirements-test.txt
     - pytest tests/ -v --cov
 
 deploy_beta:
