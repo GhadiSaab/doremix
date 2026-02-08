@@ -7,15 +7,14 @@ variables:
 
 pre_commit_check:
   stage: test
-  image: node:20
+  image: python:3.13-slim
   cache:
     key: pre-commit-cache
     paths:
       - .cache/pre-commit
-  before_script:
-    - apt-get update && apt-get install -y --no-install-recommends python3 python3-pip
-    - pip3 install --break-system-packages pre-commit
   script:
+    - apt-get update && apt-get install -y git
+    - pip install uv && uv pip install --system pre-commit
     - echo "🔍 Exécution des hooks pre-commit sur l'ensemble des fichiers..."
     - |
       pre-commit run --all-files || {
