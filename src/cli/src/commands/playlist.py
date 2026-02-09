@@ -79,7 +79,6 @@ def tracks(id: str):
     for track in tracks:
         id = str(track.idTrack)
         title = track.title
-
         table.add_row(id, title)
 
     console.print(table)
@@ -107,7 +106,7 @@ def create(
         "PUBLIC",
         "--visibility",
         "-v",
-        help="Visibility (PUBLIC, PRIVATE, OPEN, SHARED)",
+        help="Visibility (PUBLIC, PRIVATE, SHARED)",
     ),
     # owner: int = typer.Option(..., "--owner", "-o", help="Owner ID")  # TODO: À supprimer quand l'auth sera en place (récupéré depuis le token)
 ):
@@ -174,7 +173,7 @@ def update(
         None,
         "--visibility",
         "-v",
-        help="New visibility (PUBLIC, PRIVATE, OPEN, SHARED)",
+        help="New visibility (PUBLIC, PRIVATE, SHARED)",
     ),
     # TODO: Quand l'auth sera en place, l'utilisateur sera automatiquement identifié via le token
 ):

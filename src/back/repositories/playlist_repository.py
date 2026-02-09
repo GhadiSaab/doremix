@@ -129,6 +129,8 @@ class PlaylistRepository:
             )
             if not track:
                 return None
+        else:
+            track = existing_track
 
         existing = (
             db.query(TrackPlaylist)
@@ -169,10 +171,7 @@ class PlaylistRepository:
             .filter(
                 and_(
                     Playlist.name.ilike(f"%{query}%"),
-                    or_(
-                        Playlist.visibility == PlaylistVisibility.PUBLIC,
-                        Playlist.visibility == PlaylistVisibility.OPEN,
-                    ),
+                    Playlist.visibility == PlaylistVisibility.PUBLIC,
                 )
             )
             .limit(limit)

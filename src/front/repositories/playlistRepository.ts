@@ -116,6 +116,7 @@ export class PlaylistRepository {
 
     getCoverUrl(coverPath: string) {
         if (!coverPath) return null;
+        if (coverPath.startsWith("http") || coverPath.startsWith("https")) return coverPath;
         return `${API_BASE_URL}/covers/${coverPath}`;
     }
 

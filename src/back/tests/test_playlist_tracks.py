@@ -95,9 +95,9 @@ class TestPlaylistTrackOperations:
         """Test l'ajout d'un track à une playlist inexistante"""
         response = client.post(
             "/playlists/9999/track",
-            params={
+            json={
                 "title": sample_track.title,
-                "youtubeLink": sample_track.youtubeLink,
+                "url": sample_track.youtubeLink,
             },
         )
 

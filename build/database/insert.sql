@@ -53,13 +53,27 @@ INSERT INTO GROUP_USER (idUser, idGroup) VALUES
 (4, 3),
 (3, 3);
 
-INSERT INTO TRACK (titleFromYoutube, youtubeLink, listeningCount, durationSeconds) VALUES
-('Bohemian Rhapsody', 'https://youtu.be/fJ9rUzIMcZQ', 15000000, 354),
-('Get Lucky', 'https://youtu.be/5NV6Rdv1a3I', 9000000, 248),
-('Lose Yourself', 'https://youtu.be/_Yhyp-_hX2s', 5000000, 326),
-('Requiem', 'https://youtu.be/Zi8vJ_lMxQI', 800000, 300),
-('Inception Time', 'https://youtu.be/YoHD9XEInc0', 2000000, 275),
-('We Will Rock You', 'https://youtu.be/-tJYN-eG1zk', 8000000, 121);
+INSERT INTO TRACK (title, youtubeLink, listeningCount, durationSeconds) VALUES
+('Bohemian Rhapsody', 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ', 15000000, 354),
+('We Will Rock You', 'https://www.youtube.com/watch?v=-tJYN-eG1zk', 8000000, 121),
+('Enter Sandman', 'https://www.youtube.com/watch?v=CD-E-LDc384', 5000000, 331),
+('Nothing Else Matters', 'https://www.youtube.com/watch?v=tAGnKpE4NCI', 6500000, 388),
+('Get Lucky', 'https://www.youtube.com/watch?v=5NV6Rdv1a3I', 980000, 248),
+('Instant Crush', 'https://www.youtube.com/watch?v=PtFMh6T4F5A', 450000, 337),
+('Rolling in the Deep', 'https://www.youtube.com/watch?v=rYEDA3JcQqw', 2100000, 228),
+('Someone Like You', 'https://www.youtube.com/watch?v=hLQl3WQQoQ0', 1800000, 285),
+('Blinding Lights', 'https://www.youtube.com/watch?v=4NRXx6U8ABQ', 3500000, 200),
+('Starboy', 'https://www.youtube.com/watch?v=34Na4j8AVgA', 2900000, 230),
+('Lose Yourself', 'https://www.youtube.com/watch?v=_Yhyp-_hX2s', 4000000, 326),
+('Stan', 'https://www.youtube.com/watch?v=gOMhN-hfMtY', 1200000, 384),
+('HUMBLE.', 'https://www.youtube.com/watch?v=tvTRZJ-4EyI', 3100000, 177),
+('Umbrella', 'https://www.youtube.com/watch?v=CvBfHwUxHIk', 5500000, 275),
+('So What', 'https://www.youtube.com/watch?v=ylXk1LBvIqU', 45000, 562),
+('Blue in Green', 'https://www.youtube.com/watch?v=PoPL7BExSQU', 30000, 327),
+('Requiem', 'https://www.youtube.com/watch?v=Zi8vJ_lMxQI', 800000, 300),
+('Inception Time', 'https://www.youtube.com/watch?v=YoHD9XEInc0', 150000, 275),
+('Interstellar Main Theme', 'https://www.youtube.com/watch?v=zSWdZVtXT7E', 200000, 250);
+
 
 INSERT INTO TRACK_ARTIST (idTrack, idArtist) VALUES
 (1, 1), (6, 1),
@@ -76,11 +90,11 @@ INSERT INTO PLAYLIST (name, idGenre, idOwner, visibility, vote, coverImage) VALU
 
 INSERT INTO TRACK_PLAYLIST (idTrack, idPlaylist, nameInPlaylist) VALUES
 (2, 1, NULL),
-(5, 1, 'Inception (Best OST)'),
+(18, 1, 'Inception (Best OST)'),
 (4, 2, NULL),
 (5, 2, NULL),
 (1, 3, NULL),
-(6, 3, 'L hymne du stade');
+(2, 3, 'L hymne du stade');
 
 INSERT INTO GROUP_PLAYLIST (idGroup, idPlaylist) VALUES (3, 3);
 INSERT INTO USER_PLAYLIST (idUser, idPlaylist, editor) VALUES (3, 3, TRUE);

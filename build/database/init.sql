@@ -52,7 +52,7 @@ CREATE TABLE USERS (
 
 CREATE TABLE TRACK (
     idTrack SERIAL PRIMARY KEY,
-    titleFromYoutube VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
     youtubeLink VARCHAR(2048),
     listeningCount INTEGER DEFAULT 0,
     durationSeconds INTEGER,
@@ -145,6 +145,6 @@ CREATE TRIGGER update_playlist_updated_at
     FOR EACH ROW
     EXECUTE PROCEDURE update_updated_at_column();
 
-CREATE INDEX IF NOT EXISTS idx_track_title ON track(titleFromYoutube);
+CREATE INDEX IF NOT EXISTS idx_track_title ON track(title);
 CREATE INDEX IF NOT EXISTS idx_playlist_name ON playlist(name);
 CREATE INDEX IF NOT EXISTS idx_artist_name ON artist(name);

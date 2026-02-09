@@ -8,7 +8,6 @@ import enum
 class PlaylistVisibility(enum.Enum):
     PUBLIC = "PUBLIC"
     PRIVATE = "PRIVATE"
-    OPEN = "OPEN"
     SHARED = "SHARED"
 
 

@@ -39,7 +39,10 @@ class TrackRepository:
             .join(Track.artists)
             .options(joinedload(Track.artists))
             .filter(
-                or_(Track.title.ilike(f"%{query}%"), Artist.name.ilike(f"%{query}%"))
+                or_(
+                    Track.title.ilike(f"%{query}%"),
+                    Artist.name.ilike(f"%{query}%"),
+                )
             )
             .distinct()
             .limit(limit)

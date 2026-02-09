@@ -7,7 +7,6 @@ from typing import Optional
 class PlaylistVisibility(str, Enum):
     PUBLIC = "PUBLIC"
     PRIVATE = "PRIVATE"
-    OPEN = "OPEN"
     SHARED = "SHARED"
 
 
