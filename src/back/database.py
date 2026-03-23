@@ -7,7 +7,14 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///:memory:")
 
-engine = create_async_engine(DATABASE_URL, echo=True)
+engine = create_async_engine(
+    DATABASE_URL,
+    echo=True,
+    pool_size=25,
+    max_overflow=75,
+    pool_timeout=30,
+    pool_pre_ping=True,
+)
 
 AsyncSessionLocal = sessionmaker(
     bind=engine,
